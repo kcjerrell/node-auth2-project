@@ -12,6 +12,7 @@ const sharedConfig = {
   pool: {
     afterCreate: (conn, done) => {
       conn.run('PRAGMA foreign_keys = ON', done)
+      conn.run('PRAGMA journal_mode = MEMORY')
     },
   },
 }
